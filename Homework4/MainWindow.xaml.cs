@@ -20,14 +20,6 @@ namespace Homework4
     /// </summary>
     public partial class MainWindow : Window
     {
-        string IsValidZipCode
-        {
-            get
-            {
-                return txtBoxZipcode.Text;
-            }
-        }
-
         public MainWindow()
         {
             InitializeComponent();

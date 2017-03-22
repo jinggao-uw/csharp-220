@@ -9,7 +9,7 @@ using System.Windows.Data;
 
 namespace Homework4
 {
-    class ZipCodeConverter : IValueConverter
+    class ZipCodeToBoolConverter : IValueConverter
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

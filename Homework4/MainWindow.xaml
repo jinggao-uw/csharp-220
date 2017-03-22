@@ -7,11 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
-        <local:ZipCodeConverter x:Key="ZipCodeConverter" />
+        <local:ZipCodeToBoolConverter x:Key="ZipCodeToBoolConverter" />
     </Window.Resources>
     <Grid>
-        <TextBox x:Name="txtBoxZipcode" HorizontalAlignment="Left" Height="23" Margin="29,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"
-                Text="{Binding Path=ZipCode, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" />
+        <TextBox x:Name="txtBoxZipcode" 
+                 HorizontalAlignment="Left" 
+                 Height="23" 
+                 Margin="29,66,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="300"
+                 Text="{Binding Path=ZipCode, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" />
         <Button x:Name="btnSubmit" 
                 Content="Submit" 
                 HorizontalAlignment="Left" 
@@ -19,8 +24,13 @@
                 VerticalAlignment="Top" 
                 Width="75" 
                 Click="button_Click"
-                IsEnabled="{Binding Path=ZipCode, Converter={StaticResource ZipCodeConverter}, Mode=OneWay}"/>
-        <Label x:Name="labelDescription" Content="US Zip Codes ##### or #####-#####&#xD;&#xA;Canadian Postal Codes: A#B#C#" HorizontalAlignment="Left" Margin="29,19,0,0" VerticalAlignment="Top" Width="300"/>
+                IsEnabled="{Binding Path=ZipCode, Converter={StaticResource ZipCodeToBoolConverter}, Mode=OneWay}"/>
+        <Label x:Name="labelDescription" 
+               Content="US Zip Codes ##### or #####-#####&#xD;&#xA;Canadian Postal Codes: A#B#C#" 
+               HorizontalAlignment="Left" 
+               Margin="29,19,0,0" 
+               VerticalAlignment="Top" 
+               Width="300"/>
 
     </Grid>
 </Window>

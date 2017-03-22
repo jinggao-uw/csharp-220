@@ -28,7 +28,6 @@ namespace Homework4
             }
         }
 
-
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
